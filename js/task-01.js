@@ -1,15 +1,13 @@
-const refs = {
-    categories: document.querySelector("#categories"),
-};
-const items = [...refs.categories.children];
+const categories = document.querySelector("#categories");
+const items = [...categories.children];
 
-console.log("Number of categories:", items.length);
-console.log("");
-console.log("Category:", items[0].querySelector("h2").textContent);
-console.log("Elements:", Number(items[0].querySelector("ul").children.length));
-console.log("");
-console.log("Category:", items[1].querySelector("h2").textContent);
-console.log("Elements:", Number(items[1].querySelector("ul").children.length));
-console.log("");
-console.log("Category:", items[2].querySelector("h2").textContent);
-console.log("Elements:", Number(items[2].querySelector("ul").children.length));
+const countCategories = () => {
+    console.log("Number of categories:", items.length);
+        items.forEach(el => {
+            console.log("");
+            console.log("Category:", el.querySelector("h2").textContent);
+            console.log("Elements:", Number(el.querySelector("ul").children.length));
+        }
+    )
+}
+countCategories();

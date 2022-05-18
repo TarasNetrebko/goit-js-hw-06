@@ -15,6 +15,7 @@ const images = [
 
 const list = document.querySelector(".gallery");
 
-const array = [];
-images.forEach(img => array.push(`<img class="image" src="${img.url}" alt="${img.alt}">`))
-list.insertAdjacentHTML("beforeend", array);
+const array = images.map(img => `<img class="image" src="${img.url}" alt="${img.alt}">`);
+
+list.insertAdjacentHTML("beforeend", array.join(""));
+
